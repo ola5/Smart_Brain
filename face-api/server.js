@@ -46,33 +46,9 @@ app.get('/profile/:id', (req, res) => { profile.handleProfileGet(req, res, db)})
 app.put('/image', (req, res) => { image.handleImage(req, res, db)})
 app.post('/imageurl', (req, res) => { image.handleApiCall(req, res)})
 
-// from the route image
-// database.users.forEach(user => {
-// 		if (user.id === req.body.id) {
-// 			user.entries++
-// 			res.json(user.entries);
-// 		} 
-// 	})
-// 	if (!found) { 
-// 		res.status(404).json('no such user');
-// 	}
-
-
-// bcrypt.hash("bacon", null, null, function(err, hash) {
-//     // Store hash in your password DB.
-// });
-
-// // Load hash from your password DB.
-// bcrypt.compare("bacon", hash, function(err, res) {
-//     // res == true
-// });
-// bcrypt.compare("veggies", hash, function(err, res) {
-//     // res = false
-// });
-
-
-app.listen(3000, ()=> {
-	console.log('App is running on port 3000');
+app.listen(process.env.PORT || 3000, ()=> {
+  console.log(`App is running on port ${process.env.PORT}`);
 })
+
 
 
