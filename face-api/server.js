@@ -32,10 +32,7 @@ app.use(cors())
 
 
 // root route --> Method => GET :: respond with success fail
-app.get('/', (req, res)=> {
-	res.send(database.users);
-})
-
+app.get('/', (req, res)=> {res.send('it is  working !')})
 // signin route    --> Method => POST  :: respond with success or fail
 app.post('/signin', signin.handleSignin(db, bcrypt))
 // register route  --> Method => POST :: respond with new usr object
